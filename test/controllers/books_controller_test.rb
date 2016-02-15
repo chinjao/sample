@@ -1,18 +1,6 @@
 require 'test_helper'
 
 class BooksControllerTest < ActionController::TestCase
-=begin
-  test "diff check" do
-    assert_difference 'Book.count', 1 do
-      post :create, book: { isbn: '978-4-7741-4223-0',
-        title: 'Rubyポケットリファレンス', price: 3000,
-        publish: '技術評論社' }
-    end
-  end
-=end
-
-
-=begin
   setup do
     @book = books(:one)
   end
@@ -58,5 +46,4 @@ class BooksControllerTest < ActionController::TestCase
 
     assert_redirected_to books_path
   end
-=end
 end

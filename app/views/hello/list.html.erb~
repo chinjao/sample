@@ -9,7 +9,7 @@
 <%
 =begin
 %>
-  <tr style="background-color:<%= cycle('#FFffFF', '#FFff99') %>">
+  <tr style="background-color:<%= cycle('#11ffFF', '#FFff99') %>">
 <%
 =end
 %>

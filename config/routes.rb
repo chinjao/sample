@@ -1,6 +1,7 @@
  require 'TimeConstraint'
 
 Railbook::Application.routes.draw do
+  resources :books
   resources :fan_comments
 
   # resource :config

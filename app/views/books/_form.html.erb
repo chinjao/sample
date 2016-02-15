@@ -4,8 +4,8 @@
       <h2><%= pluralize(@book.errors.count, "error") %> prohibited this book from being saved:</h2>
 
       <ul>
-      <% @book.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
+      <% @book.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
       <% end %>
       </ul>
     </div>
@@ -13,11 +13,6 @@
 
   <div class="field">
     <%= f.label :isbn %><br>
-<%
-=begin %>
-    <%= f.label :isbn, 'ISBNコード' %><br>
-<%
-=end %> 
     <%= f.text_field :isbn %>
   </div>
   <div class="field">
@@ -42,11 +37,5 @@
   </div>
   <div class="actions">
     <%= f.submit %>
-<%
-=begin %>
-    <%= f.submit '保存', data: { confirm: '保存しても良いですか？',
-      disable_with: '処理中...' } %>
-<%
-=end %>
   </div>
 <% end %>

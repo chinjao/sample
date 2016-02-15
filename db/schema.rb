@@ -11,9 +11,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140118053815) do
+ActiveRecord::Schema.define(version: 20160215022014) do
 
-  create_table "authors", force: true do |t|
+  create_table "authors", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "name"
     t.date     "birth"
@@ -26,23 +26,23 @@ ActiveRecord::Schema.define(version: 20140118053815) do
 
   add_index "authors", ["user_id"], name: "index_authors_on_user_id"
 
-  create_table "authors_books", id: false, force: true do |t|
+  create_table "authors_books", id: false, force: :cascade do |t|
     t.integer "author_id", null: false
     t.integer "book_id",   null: false
   end
 
-  create_table "books", force: true do |t|
+  create_table "books", force: :cascade do |t|
     t.string   "isbn"
     t.string   "title"
     t.integer  "price"
     t.string   "publish"
     t.date     "published"
     t.boolean  "cd"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
-  create_table "fan_comments", force: true do |t|
+  create_table "fan_comments", force: :cascade do |t|
     t.integer  "author_no"
     t.string   "name"
     t.text     "body"
@@ -51,7 +51,7 @@ ActiveRecord::Schema.define(version: 20140118053815) do
     t.datetime "updated_at"
   end
 
-  create_table "members", force: true do |t|
+  create_table "members", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
     t.integer  "lock_version", default: 0
@@ -59,7 +59,7 @@ ActiveRecord::Schema.define(version: 20140118053815) do
     t.datetime "updated_at"
   end
 
-  create_table "memos", force: true do |t|
+  create_table "memos", force: :cascade do |t|
     t.string   "memoable_type"
     t.integer  "memoable_id"
     t.string   "body"
@@ -67,7 +67,7 @@ ActiveRecord::Schema.define(version: 20140118053815) do
     t.datetime "updated_at"
   end
 
-  create_table "reviews", force: true do |t|
+  create_table "reviews", force: :cascade do |t|
     t.integer  "book_id"
     t.integer  "user_id"
     t.text     "body"
@@ -78,7 +78,7 @@ ActiveRecord::Schema.define(version: 20140118053815) do
   add_index "reviews", ["book_id"], name: "index_reviews_on_book_id"
   add_index "reviews", ["user_id"], name: "index_reviews_on_user_id"
 
-  create_table "users", force: true do |t|
+  create_table "users", force: :cascade do |t|
     t.string   "username"
     t.string   "password"
     t.string   "salt"

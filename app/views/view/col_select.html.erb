@@ -1,3 +1,9 @@
 <%= form_for(@book) do |f| %>
-  <%= f.collection_select :publish, @books, :publish, :publish %>
+  <!--%= f.collection_select :publish, @books, :publish, :publish %-->
+  <select id = "book_publish" name="book[publish">
+    <option value="gijutuhyouronn" selected="selected">gijutuhyouron</option>
+    <option value="nikkeibipi">nikkeibipi</option>
+  </select>
+
 <% end %>
+
